@@ -1,29 +1,33 @@
 package leetcode
 
 // 解法一 位图
-func lengthOfLongestSubstring(s string) int {
+func lengthOfLongestSubstring(s string) (int, string) {
 	if len(s) == 0 {
-		return 0
+		return 0, ""
 	}
 	var bitSet [256]bool
-	result, left, right := 0, 0, 0
+	result, left, right, ss := 0, 0, 0, ""
 	for left < len(s) {
 		// 右侧字符对应的 bitSet 被标记 true，说明此字符在 X 位置重复，需要左侧向前移动，直到将 X 标记为 false
+		var hasSame bool
 		if bitSet[s[right]] {
 			bitSet[s[left]] = false
 			left++
+			hasSame = false
 		} else {
 			bitSet[s[right]] = true
 			right++
+			hasSame = true
 		}
-		if result < right-left {
+		if hasSame && result < right-left {
 			result = right - left
+			ss = s[left:right]
 		}
 		if left+result >= len(s) || right >= len(s) {
 			break
 		}
 	}
-	return result
+	return result, ss
 }
 
 // 解法二 滑动窗口
