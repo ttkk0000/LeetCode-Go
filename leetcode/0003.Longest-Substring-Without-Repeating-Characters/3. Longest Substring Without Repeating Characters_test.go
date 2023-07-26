@@ -51,7 +51,7 @@ func Test_Problem3(t *testing.T) {
 
 	for _, q := range qs {
 		_, p := q.ans3, q.para3
-		v, t := lengthOfLongestSubstring(p.s)
+		v, t := lengthOfLongestSubstring1(p.s)
 		fmt.Printf("【input】:%v       【output】:(%v,%v)\n", p, v, t)
 	}
 	fmt.Printf("\n\n\n")
