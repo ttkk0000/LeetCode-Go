@@ -54,15 +54,15 @@ func lengthOfLongestSubstring1(s string) int {
 
 // 解法三 滑动窗口-哈希桶
 func lengthOfLongestSubstring2(s string) int {
-	right, left, res := 0, 0, 0
+	left, right, res := 0, 0, 0
 	indexes := make(map[byte]int, len(s))
-	for left < len(s) {
-		if idx, ok := indexes[s[left]]; ok && idx >= right {
-			right = idx + 1
+	for right < len(s) {
+		if idx, ok := indexes[s[right]]; ok && idx >= left {
+			left = idx + 1
 		}
-		indexes[s[left]] = left
-		left++
-		res = max(res, left-right)
+		indexes[s[right]] = right
+		right++
+		res = max(res, right-left)
 	}
 	return res
 }
