@@ -17,6 +17,7 @@ type ListNode = structures.ListNode
 
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	head := &ListNode{Val: 0}
+	//carry变量定义比较关键
 	n1, n2, carry, current := 0, 0, 0, head
 	for l1 != nil || l2 != nil || carry != 0 {
 		if l1 == nil {
