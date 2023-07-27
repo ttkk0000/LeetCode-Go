@@ -28,8 +28,8 @@ func Test_Problem4(t *testing.T) {
 	qs := []question4{
 
 		{
-			para4{[]int{1, 3}, []int{2}},
-			ans4{2.0},
+			para4{[]int{1, 3, 5}, []int{2, 4}},
+			ans4{3.0},
 		},
 
 		{
