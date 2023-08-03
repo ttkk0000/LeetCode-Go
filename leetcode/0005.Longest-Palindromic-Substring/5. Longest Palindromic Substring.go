@@ -20,6 +20,7 @@ func longestPalindrome(s string) string {
 	for i := 0; i < len(newS); i++ {
 		if i < maxRight {
 			// 这一行代码是 Manacher 算法的关键所在
+			//个人觉得是maxRight-i+1
 			dp[i] = min(maxRight-i, dp[2*center-i])
 		}
 		// 中心扩散法更新 dp[i]
