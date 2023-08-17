@@ -10,6 +10,7 @@ func threeSum(nums []int) [][]int {
 	result, start, end, index, addNum, length := make([][]int, 0), 0, 0, 0, 0, len(nums)
 	for index = 1; index < length-1; index++ {
 		start, end = 0, length-1
+		//why?上次end=nums[index]已经遍历过，只需要把start移到index-1即可
 		if index > 1 && nums[index] == nums[index-1] {
 			start = index - 1
 		}

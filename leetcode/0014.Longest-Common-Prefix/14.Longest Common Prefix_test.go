@@ -25,8 +25,8 @@ func Test_Problem14(t *testing.T) {
 	qs := []question14{
 
 		{
-			para14{[]string{"flower", "flow", "flight"}},
-			ans14{"fl"},
+			para14{[]string{"flower", "flow", "flight", "f"}},
+			ans14{"f"},
 		},
 
 		{
