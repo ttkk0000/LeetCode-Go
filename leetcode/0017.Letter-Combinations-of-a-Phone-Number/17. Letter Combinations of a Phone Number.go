@@ -58,7 +58,7 @@ func letterCombinations_(digits string) []string {
 	}
 	res = tmp
 	final++
-	letterCombinations(digits[1:])
+	letterCombinations_(digits[1:])
 	final--
 	if final == 0 {
 		tmp = res
